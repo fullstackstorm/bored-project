@@ -1,0 +1,34 @@
+# Ignore build artifacts
+dist/
+build/
+
+# Ignore environment-specific files
+.env
+.env.*
+
+# Ignore package manager directories
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Ignore editor-specific files and directories
+.idea/
+.vscode/
+
+# Ignore operating system files
+.DS_Store
+Thumbs.db
+
+# Ignore log files
+*.log
+
+# Ignore backup files
+*~
+*.bak
+
+# Ignore temporary files
+*.tmp
+
+# Ignore compiled files
+*.min.js
+*.min.css
