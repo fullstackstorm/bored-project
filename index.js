@@ -1,3 +1,5 @@
+// Available participants is 1-5.
+
 const activities = [
   "relaxation",
   "charity",
