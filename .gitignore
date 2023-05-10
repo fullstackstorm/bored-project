@@ -32,3 +32,6 @@ Thumbs.db
 # Ignore compiled files
 *.min.js
 *.min.css
+
+# Ignore specific file
+tester.js
