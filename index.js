@@ -15,3 +15,29 @@ const activities = [
   "diy",
   "music",
 ];
+
+document.addEventListener("DOMContentLoaded", manipulateDOM);
+
+function manipulateDOM() {
+  // Grab the div.
+  // Create six divs.
+  // Load them to the DOM.
+  const activityCollection = document.getElementById("activity-collection");
+
+  for (let i = 0; i < 6; i++) {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    const suggestedActivity = document.createElement("h3");
+    suggestedActivity.innerText = "To be determined.";
+
+    const price = document.createElement("h3");
+    price.innerText = "To be determined.";
+
+    const accessibility = document.createElement("h3");
+    accessibility.innerText = "To be determined.";
+
+    card.append(suggestedActivity, price, accessibility);
+    activityCollection.appendChild(card);
+  }
+}
