@@ -32,10 +32,8 @@ function manipulateDOM() {
     suggestedActivity.innerText = "To be determined.";
 
     const price = document.createElement("h3");
-    price.innerText = "To be determined.";
 
     const accessibility = document.createElement("h3");
-    accessibility.innerText = "To be determined.";
 
     card.append(suggestedActivity, price, accessibility);
     activityCollection.appendChild(card);
