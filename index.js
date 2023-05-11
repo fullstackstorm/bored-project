@@ -19,7 +19,7 @@ const activities = [
 ];
 const priceRange = ["random", "$", "$$", "$$$"];
 
-function generateSuggestions(participantQuantity, activityType, price) {
+async function generateSuggestions(participantQuantity, activityType, price) {
   let request = new URL("http://www.boredapi.com/api/activity");
 
   if (participantQuantity !== "random") {
@@ -43,10 +43,7 @@ function generateSuggestions(participantQuantity, activityType, price) {
     }
   }
 
-  fetch(request)
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((error) => console.log(error));
+  await fillCards(request);
 }
 
 document.addEventListener("DOMContentLoaded", manipulateDOM);
@@ -56,7 +53,7 @@ function manipulateDOM() {
   addEmptyCards();
 }
 
-function addFormElements() {
+async function addFormElements() {
   const form = document.getElementById("activity-requester");
   const participantQuantity = document.getElementById(
     "participant-quantity-selection"
@@ -109,4 +106,20 @@ function addEmptyCards() {
     card.append(suggestedActivity, price, accessibility);
     activityCollection.appendChild(card);
   }
+}
+
+async function fillCards(request) {
+  const cardNodes = document.querySelectorAll("#activity-collection .card");
+
+  for (let i = 0; i < cardNodes.length; i++) {
+    const card = cardNodes[i];
+    await getRequest(request);
+  }
+}
+
+async function getRequest(request) {
+  await fetch(request)
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.log(error));
 }
