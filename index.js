@@ -27,6 +27,7 @@ function manipulateDOM() {
 }
 
 function addFormElements() {
+    const form = document.getElementById("activity-requester");
   const participantQuantity = document.getElementById(
     "participant-quantity-selection"
   );
@@ -50,6 +51,11 @@ function addFormElements() {
     option.textContent = dollarAmount;
     price.appendChild(option);
   })
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    generateSuggestions(event);
+  });
 }
 
 function addEmptyCards() {
