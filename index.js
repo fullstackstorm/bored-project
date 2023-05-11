@@ -19,6 +19,14 @@ const activities = [
 ];
 const priceRange = ["random", "$", "$$", "$$$"];
 
+function generateSuggestions(participantQuantity, activityType, price) {
+  let baseRequest = "http://www.boredapi.com/api/activity";
+  fetch(baseRequest)
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.log(error));
+}
+
 document.addEventListener("DOMContentLoaded", manipulateDOM);
 
 function manipulateDOM() {
@@ -27,7 +35,7 @@ function manipulateDOM() {
 }
 
 function addFormElements() {
-    const form = document.getElementById("activity-requester");
+  const form = document.getElementById("activity-requester");
   const participantQuantity = document.getElementById(
     "participant-quantity-selection"
   );
@@ -44,17 +52,21 @@ function addFormElements() {
     const option = document.createElement("option");
     option.textContent = activity;
     activityType.appendChild(option);
-  })
+  });
 
   priceRange.forEach((dollarAmount) => {
     const option = document.createElement("option");
     option.textContent = dollarAmount;
     price.appendChild(option);
-  })
+  });
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    generateSuggestions(event);
+    generateSuggestions(
+      participantQuantity.value,
+      activityType.value,
+      price.value
+    );
   });
 }
 
