@@ -4,7 +4,9 @@ $ = 0-0.33
 $$ = 0.33-0.66
 $$$ = 0.66-1
 */
+const numberSelection = ["random", 1, 2, 3, 4, 5];
 const activities = [
+  "random",
   "relaxation",
   "charity",
   "recreational",
@@ -15,13 +17,28 @@ const activities = [
   "diy",
   "music",
 ];
+const priceRange = ["random", "$", "$$", "$$$"];
 
 document.addEventListener("DOMContentLoaded", manipulateDOM);
 
 function manipulateDOM() {
-  // Grab the div.
-  // Create six divs.
-  // Load them to the DOM.
+  addFormElements();
+  addEmptyCards();
+}
+
+function addFormElements() {
+  const participantQuantity = document.getElementById(
+    "participant-quantity-selection"
+  );
+
+  numberSelection.forEach((number) => {
+    const option = document.createElement("option");
+    option.textContent = number;
+    participantQuantity.appendChild(option);
+  });
+}
+
+function addEmptyCards() {
   const activityCollection = document.getElementById("activity-collection");
 
   for (let i = 0; i < 6; i++) {
@@ -29,7 +46,7 @@ function manipulateDOM() {
     card.classList.add("card");
 
     const suggestedActivity = document.createElement("h3");
-    suggestedActivity.innerText = "To be determined.";
+    suggestedActivity.textContent = "To be determined.";
 
     const price = document.createElement("h3");
 
