@@ -30,12 +30,26 @@ function addFormElements() {
   const participantQuantity = document.getElementById(
     "participant-quantity-selection"
   );
+  const activityType = document.getElementById("activity-type-selection");
+  const price = document.getElementById("price-range-seclection");
 
   numberSelection.forEach((number) => {
     const option = document.createElement("option");
     option.textContent = number;
     participantQuantity.appendChild(option);
   });
+
+  activities.forEach((activity) => {
+    const option = document.createElement("option");
+    option.textContent = activity;
+    activityType.appendChild(option);
+  })
+
+  priceRange.forEach((dollarAmount) => {
+    const option = document.createElement("option");
+    option.textContent = dollarAmount;
+    price.appendChild(option);
+  })
 }
 
 function addEmptyCards() {
