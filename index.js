@@ -20,29 +20,27 @@ const activities = [
 const priceRange = ["random", "$", "$$", "$$$"];
 
 function generateSuggestions(participantQuantity, activityType, price) {
-  let request = "http://www.boredapi.com/api/activity?";
+  let request = new URL("http://www.boredapi.com/api/activity");
+
   if (participantQuantity !== "random") {
-    request = request.concat(`participants${participantQuantity}&`);
+    request.searchParams.append("participants", participantQuantity);
   }
+
   if (activityType !== "random") {
-    request = request.concat(`type=${activityType}&`);
+    request.searchParams.append("type", activityType);
   }
+
   if (price !== "random") {
     if (price === "$") {
-      const minPrice = 0;
-      const maxPrice = 0.33;
-      request = request.concat(`minprice=${minPrice}&maxprice=${maxPrice}`);
+      request.searchParams.append("minprice", "0");
+      request.searchParams.append("maxprice", "0.33");
+    } else if (price === "$$") {
+      request.searchParams.append("minprice", "0.33");
+      request.searchParams.append("maxprice", "0.66");
+    } else if (price === "$$$") {
+      request.searchParams.append("minprice", "0.66");
+      request.searchParams.append("maxprice", "1");
     }
-    if (price === "$$") {
-      const minPrice = 0.33;
-      const maxPrice = 0.66;
-      request = request.concat(`minprice=${minPrice}&maxprice=${maxPrice}`);
-    }
-    if (price === "$$$") {
-        const minPrice = 0.66;
-        const maxPrice = 1;
-        request = request.concat(`minprice=${minPrice}&maxprice=${maxPrice}`);
-      }
   }
 
   fetch(request)
