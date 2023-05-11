@@ -22,10 +22,17 @@ const priceRange = ["random", "$", "$$", "$$$"];
 function generateSuggestions(participantQuantity, activityType, price) {
   let request = "http://www.boredapi.com/api/activity?";
   if(participantQuantity !== "random"){
-    request = request.concat("participants=", participantQuantity, "&");
+    request = request.concat(`participants${participantQuantity}&`);
   }
-  if(activityType != "random"){
-    request = request.concat("type=", activityType, "&");
+  if(activityType !== "random"){
+    request = request.concat(`type=${activityType}&`);
+  }
+  if(price !== "random"){
+    if(price === "$"){
+        const minPrice = 0;
+        const maxPrice = 0.33;
+        request = request.concat(`minprice=${minPrice}&maxprice=${maxPrice}`)
+    }
   }
 
   fetch(request)
