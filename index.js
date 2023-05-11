@@ -22,9 +22,11 @@ const priceRange = ["random", "$", "$$", "$$$"];
 function generateSuggestions(participantQuantity, activityType, price) {
   let request = "http://www.boredapi.com/api/activity?";
   if(participantQuantity !== "random"){
-    request = request.concat("participants=", participantQuantity, "&")
+    request = request.concat("participants=", participantQuantity, "&");
   }
-  //if(activityType != "random")
+  if(activityType != "random"){
+    request = request.concat("type=", activityType, "&");
+  }
 
   fetch(request)
     .then((response) => response.json())
