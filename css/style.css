@@ -1,3 +1,9 @@
+#activity-requester {
+  border: grey solid 1px;
+  padding: 1rem;
+  display: inline-grid;
+}
+
 .card {
   text-align: center;
   border: grey solid 1px;
