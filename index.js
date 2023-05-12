@@ -111,16 +111,15 @@ function addEmptyCards() {
 async function fillCards(request) {
   const cardNodes = document.querySelectorAll("#activity-collection .card");
 
-  const fillData = (data, card) => {
-    const activity = card.querySelector("h3");
-    activity.textContent = data.activity;
-  }
-
   for (let i = 0; i < cardNodes.length; i++) {
     const card = cardNodes[i];
-    await fetch(request)
-      .then((response) => response.json())
-      .then((data) => fillData(data, card))
-      .catch((error) => console.log(error));
+    await getRequest(request);
   }
+}
+
+async function getRequest(request) {
+  await fetch(request)
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.log(error));
 }
