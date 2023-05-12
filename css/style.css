@@ -70,8 +70,13 @@
 
 #activity-requester {
   border: grey solid 1px;
-  padding: 1rem;
+  padding: 5rem;
   display: inline-grid;
+}
+
+.form-spacer {
+  width: 5rem;
+  height: 5rem;
 }
 
 .card .header {
