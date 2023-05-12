@@ -4,6 +4,20 @@
   display: inline-grid;
 }
 
+.card-empty {
+  border: rgb(167, 167, 167) solid 2px;
+  background-color: #d5d5d5;
+  padding: 1rem;
+  width: 15rem;
+  height: 25rem;
+  display: inline-grid;
+  margin: 1rem 2rem;
+}
+
+.card-empty .header {
+  visibility: hidden;
+}
+
 .card {
   text-align: center;
   border: grey solid 2px;

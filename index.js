@@ -94,7 +94,7 @@ function addEmptyCards() {
 
   for (let i = 0; i < 6; i++) {
     const card = document.createElement("div");
-    card.classList.add("card");
+    card.classList.add("card-empty");
 
     const header = document.createElement("h2");
     header.classList.add("header");
@@ -103,26 +103,27 @@ function addEmptyCards() {
     const suggestedActivity = document.createElement("h3");
     suggestedActivity.classList.add("activity");
 
-    const price = document.createElement("h3");
-    price.classList.add("price");
-
     const accessibility = document.createElement("h3");
     accessibility.classList.add("accessibility");
 
-    card.append(header, suggestedActivity, price, accessibility);
+    card.append(header, suggestedActivity, accessibility);
     activityCollection.appendChild(card);
   }
 }
 
 async function fillCards(request) {
-  const cardNodes = document.querySelectorAll("#activity-collection .card");
+  let cardNodes = document.querySelectorAll("#activity-collection .card");
+
+  if(cardNodes.length === 0){
+    cardNodes = document.querySelectorAll("#activity-collection .card-empty");
+  }
 
   const fillElements = (data, card) => {
+    card.classList.remove("card-empty");
+    card.classList.add("card");
+
     const activityElement = card.querySelector(".activity");
     activityElement.textContent = data.activity;
-
-    const priceElement = card.querySelector(".price");
-    priceElement.textContent = data.price;
 
     const accessibilityElement = card.querySelector(".accessibility");
     accessibilityElement.textContent = data.accessibility;
