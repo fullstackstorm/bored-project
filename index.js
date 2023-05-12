@@ -96,6 +96,10 @@ function addEmptyCards() {
     const card = document.createElement("div");
     card.classList.add("card");
 
+    const header = document.createElement("h2");
+    header.classList.add("header");
+    header.textContent = `Option ${i+1}`;
+
     const suggestedActivity = document.createElement("h3");
     suggestedActivity.classList.add("activity");
 
@@ -105,7 +109,7 @@ function addEmptyCards() {
     const accessibility = document.createElement("h3");
     accessibility.classList.add("accessibility");
 
-    card.append(suggestedActivity, price, accessibility);
+    card.append(header, suggestedActivity, price, accessibility);
     activityCollection.appendChild(card);
   }
 }
@@ -113,15 +117,22 @@ function addEmptyCards() {
 async function fillCards(request) {
   const cardNodes = document.querySelectorAll("#activity-collection .card");
 
+  const fillElements = (data, card) => {
+    const activityElement = card.querySelector(".activity");
+    activityElement.textContent = data.activity;
+
+    const priceElement = card.querySelector(".price");
+    priceElement.textContent = data.price;
+
+    const accessibilityElement = card.querySelector(".accessibility");
+    accessibilityElement.textContent = data.accessibility;
+  };
+
   for (let i = 0; i < cardNodes.length; i++) {
     const card = cardNodes[i];
-    await getRequest(request);
+    await fetch(request)
+      .then((response) => response.json())
+      .then((data) => fillElements(data, card))
+      .catch((error) => console.log(error));
   }
-}
-
-async function getRequest(request) {
-  await fetch(request)
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((error) => console.log(error));
 }
