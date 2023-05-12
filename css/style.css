@@ -27,6 +27,7 @@
   display: inline-grid;
   margin: 1rem 2rem;
   box-shadow: 3px 4px #5d5959;
+  transition: transform 0.5s ease;
 }
 
 .card .header {
@@ -36,4 +37,9 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.card-shrink {
+  transition: all 0.3s ease-out;
+  transform: scale(0.95);
 }

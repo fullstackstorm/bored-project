@@ -121,12 +121,17 @@ async function fillCards(request) {
   const fillElements = (data, card) => {
     card.classList.remove("card-empty");
     card.classList.add("card");
+    card.classList.add("card-shrink");
 
     const activityElement = card.querySelector(".activity");
     activityElement.textContent = data.activity;
 
     const accessibilityElement = card.querySelector(".accessibility");
     accessibilityElement.textContent = data.accessibility;
+
+    setTimeout(() => {
+      card.classList.remove("card-shrink");
+    }, 500);
   };
 
   for (let i = 0; i < cardNodes.length; i++) {
