@@ -14,3 +14,12 @@
   margin: 1rem 2rem;
   box-shadow: 3px 4px #5d5959;
 }
+
+.card .header {
+  background-color: rgb(0, 66, 152);
+  color: azure;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
