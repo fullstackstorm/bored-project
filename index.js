@@ -97,11 +97,13 @@ function addEmptyCards() {
     card.classList.add("card");
 
     const suggestedActivity = document.createElement("h3");
-    suggestedActivity.textContent = "To be determined.";
+    suggestedActivity.classList.add("activity");
 
     const price = document.createElement("h3");
+    price.classList.add("price");
 
     const accessibility = document.createElement("h3");
+    accessibility.classList.add("accessibility");
 
     card.append(suggestedActivity, price, accessibility);
     activityCollection.appendChild(card);
