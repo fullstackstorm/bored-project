@@ -29,19 +29,26 @@
       href="https://images.freeimages.com/fic/images/icons/2711/free_icons_for_windows8_metro/128/brain.png?ref=findicons"
     />
     <!-- TODO: Add favicon.ico file to project -->
-    <link rel="stylesheet" href="css/normalize.css" /> <!-- TODO: Add normalizer css -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- TODO: Add normalizer css -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
-    <form id="activity-requester">
-      <label for="participant-quantity-selection">Select the number of participants:</label>
-      <select id="participant-quantity-selection"></select>
-      <label for="activity-type-selection">Select the type of activity:</label>
-      <select id="activity-type-selection"></select>
-      <label for="price-range-seclection">Select the price range:</label>
-      <select id="price-range-seclection"></select>
-      <input type="submit">
-    </form>
+  <body id="container">
+    <div id="form">
+      <form id="activity-requester">
+        <label for="participant-quantity-selection"
+          >Select the number of participants:</label
+        >
+        <select id="participant-quantity-selection"></select>
+        <label for="activity-type-selection"
+          >Select the type of activity:</label
+        >
+        <select id="activity-type-selection"></select>
+        <label for="price-range-seclection">Select the price range:</label>
+        <select id="price-range-seclection"></select>
+        <input type="submit" />
+      </form>
+    </div>
 
     <div id="activity-collection"></div>
 

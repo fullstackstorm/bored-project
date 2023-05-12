@@ -1,3 +1,17 @@
+#container {
+  display: grid;
+  grid-template-columns: 300px auto;
+  grid-gap: 20px;
+}
+
+#form {
+  grid-column: 1;
+}
+
+#activity-collection {
+  grid-column: 2;
+}
+/**/
 #activity-requester {
   border: grey solid 1px;
   padding: 1rem;
@@ -42,19 +56,23 @@
 .card .activity {
   color: rgb(38, 38, 38);
   border: grey solid 2px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.card .accessibility{
-  color: rgb(239, 253, 255);
   padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  grid-row: 2 / span 3;
+}
+
+.card .accessibility{
+  color: rgb(239, 253, 255);
+  /*padding: 10px;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: auto;
+  height: 50%;
 }
 
 .card .easy{
