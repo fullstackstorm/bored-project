@@ -39,6 +39,36 @@
   text-align: center;
 }
 
+.card .activity {
+  color: rgb(38, 38, 38);
+  border: grey solid 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card .accessibility{
+  color: rgb(239, 253, 255);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card .easy{
+  background-color: #319931;
+}
+
+.card .medium{
+  background-color: #760086;
+}
+
+.card .hard{
+  background-color: #952439;
+}
+
 .card-shrink {
   transition: all 0.3s ease-out;
   transform: scale(0.95);

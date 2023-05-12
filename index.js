@@ -98,7 +98,7 @@ function addEmptyCards() {
 
     const header = document.createElement("h2");
     header.classList.add("header");
-    header.textContent = `Option ${i+1}`;
+    header.textContent = `Option ${i + 1}`;
 
     const suggestedActivity = document.createElement("h3");
     suggestedActivity.classList.add("activity");
@@ -114,7 +114,7 @@ function addEmptyCards() {
 async function fillCards(request) {
   let cardNodes = document.querySelectorAll("#activity-collection .card");
 
-  if(cardNodes.length === 0){
+  if (cardNodes.length === 0) {
     cardNodes = document.querySelectorAll("#activity-collection .card-empty");
   }
 
@@ -127,7 +127,17 @@ async function fillCards(request) {
     activityElement.textContent = data.activity;
 
     const accessibilityElement = card.querySelector(".accessibility");
-    accessibilityElement.textContent = data.accessibility;
+    accessibilityElement.className = "accessibility";
+    if (data.accessibility < 0.33) {
+      accessibilityElement.textContent = "Easy";
+      accessibilityElement.classList.add("easy");
+    } else if (data.accessibility < 0.66) {
+      accessibilityElement.textContent = "Medium";
+      accessibilityElement.classList.add("medium");
+    } else {
+      accessibilityElement.textContent = "Hard";
+      accessibilityElement.classList.add("hard");
+    }
 
     setTimeout(() => {
       card.classList.remove("card-shrink");
