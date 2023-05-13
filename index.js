@@ -1,8 +1,8 @@
 // Available participants is 1-5.
 /* Cost breakdown:
-$ = 0-0.33
-$$ = 0.33-0.66
-$$$ = 0.66-1
+$ = 0-0.26
+$$ = 0.26-0.53
+$$$ = 0.53-0.8
 */
 const numberSelection = ["random", 1, 2, 3, 4, 5];
 const activities = [
@@ -33,13 +33,13 @@ async function generateSuggestions(participantQuantity, activityType, price) {
   if (price !== "random") {
     if (price === "$") {
       request.searchParams.append("minprice", "0");
-      request.searchParams.append("maxprice", "0.33");
+      request.searchParams.append("maxprice", "0.26");
     } else if (price === "$$") {
-      request.searchParams.append("minprice", "0.33");
-      request.searchParams.append("maxprice", "0.66");
+      request.searchParams.append("minprice", "0.26");
+      request.searchParams.append("maxprice", "0.53");
     } else if (price === "$$$") {
-      request.searchParams.append("minprice", "0.66");
-      request.searchParams.append("maxprice", "1");
+      request.searchParams.append("minprice", "0.53");
+      request.searchParams.append("maxprice", "0.8");
     }
   }
 
