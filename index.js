@@ -129,13 +129,13 @@ async function fillCards(request) {
     const accessibilityElement = card.querySelector(".accessibility");
     accessibilityElement.className = "accessibility";
     if (data.accessibility < 0.33) {
-      accessibilityElement.textContent = "Easy";
+      accessibilityElement.textContent = "High Accessibility";
       accessibilityElement.classList.add("easy");
     } else if (data.accessibility < 0.66) {
-      accessibilityElement.textContent = "Medium";
+      accessibilityElement.textContent = "Medium Accessibility";
       accessibilityElement.classList.add("medium");
     } else {
-      accessibilityElement.textContent = "Hard";
+      accessibilityElement.textContent = "Low Accessibility";
       accessibilityElement.classList.add("hard");
     }
 
