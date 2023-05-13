@@ -95,6 +95,7 @@ function addEmptyCards() {
   for (let i = 0; i < 6; i++) {
     const card = document.createElement("div");
     card.classList.add("card-empty");
+    card.addEventListener("click", addToFolder);
 
     const header = document.createElement("h2");
     header.classList.add("header");
@@ -109,6 +110,10 @@ function addEmptyCards() {
     card.append(header, suggestedActivity, accessibility);
     activityCollection.appendChild(card);
   }
+}
+
+function addToFolder(){
+  console.log("I am clicked.");
 }
 
 async function fillCards(request) {

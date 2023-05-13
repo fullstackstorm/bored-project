@@ -13,17 +13,27 @@
 }*/
 
 #container {
-  display: grid;
+  display: inline-grid;
   grid-template-columns: auto 1fr;
   grid-gap: 20px;
 }
 
 #form {
+  height: fit-content;
   grid-column: 1; /* Position form in the first column */
 }
 
+#activity-folder {
+  height: fit-content;
+  grid-column: 1;
+  grid-row: 2;
+  border: grey solid 1px;
+}
+
 #activity-collection {
+  height: fit-content;
   grid-column: 2; /* Position activity-collection in the second column */
+  grid-row: 1;
 }
 
 /* Media query for screens with maximum width of 600px */
@@ -74,6 +84,8 @@
   display: inline-grid;
   margin: 1rem 3rem 1rem 3rem;
 }
+
+
 
 .form-spacer {
   width: 5rem;
