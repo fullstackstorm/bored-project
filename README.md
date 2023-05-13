@@ -11,7 +11,7 @@ To run this web application, follow the steps below:
 1. Clone the repository to your local machine using the following command:
 
    ```shell
-   git clone git@github.com:fullstackstorm/bored-project.git
+   git clone git@github.com:<username>/bored-project.git
    ```
 2. Navigate to the project directory:
 
