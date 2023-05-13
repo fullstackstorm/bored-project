@@ -37,7 +37,7 @@ The web application should now be running in your web browser. Start interacting
 
    - Number of Participants: 1-5
    - Activity Type: relaxation, charity, recreational, busywork, education, social, cooking, diy, and music
-   - Price: $, $$, and $$$
+   - Price: `$`, `$$`, and `$$$`
 
    Each selection also offers a "random" option if you can't be bothered.
 
