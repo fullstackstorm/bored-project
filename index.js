@@ -1,8 +1,8 @@
 // Available participants is 1-5.
 /* Cost breakdown:
-$ = 0-0.33
-$$ = 0.33-0.66
-$$$ = 0.66-1
+$ = 0-0.26
+$$ = 0.26-0.53
+$$$ = 0.53-0.8
 */
 const numberSelection = ["random", 1, 2, 3, 4, 5];
 const activities = [
@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", manipulateDOM);
 
 function manipulateDOM() {
   addFormElements();
+  addFolder();
   addEmptyCards();
 }
 
@@ -89,6 +90,14 @@ async function addFormElements() {
   });
 }
 
+function addFolder() {
+  const folder = document.querySelector("#activity-folder #folder");
+  const imageUrl = "./images/transparent-folder.png";
+  folder.style.backgroundImage = `url('${imageUrl}')`;
+  folder.style.backgroundSize = "100%";
+  folder.style.backgroundPosition = "center";
+}
+
 function addEmptyCards() {
   const activityCollection = document.getElementById("activity-collection");
 
@@ -112,7 +121,7 @@ function addEmptyCards() {
   }
 }
 
-function addToFolder(){
+function addToFolder() {
   console.log("I am clicked.");
 }
 

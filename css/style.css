@@ -24,8 +24,9 @@
 }
 
 #activity-folder {
-  height: fit-content;
   border: grey solid 1px;
+  width: 100%; /* or a fixed width if desired */
+  height: 15rem; /* outer div will adjust its height based on the content */
 }
 
 #activity-collection {
@@ -83,7 +84,12 @@
   margin: 1rem 3rem 1rem 3rem;
 }
 
-
+#folder {
+  padding: 8rem;
+  display: block; /* ensure the image is a block-level element */
+  max-width: 100%; /* ensure the image does not exceed the width of its container */
+  height: auto; /* allow the image to adjust its height proportionally */
+}
 
 .form-spacer {
   width: 5rem;
