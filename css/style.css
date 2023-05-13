@@ -25,8 +25,6 @@
 
 #activity-folder {
   height: fit-content;
-  grid-column: 1;
-  grid-row: 2;
   border: grey solid 1px;
 }
 
@@ -89,7 +87,7 @@
 
 .form-spacer {
   width: 5rem;
-  height: 5rem;
+  height: 3rem;
 }
 
 .card .header {
