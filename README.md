@@ -2,6 +2,7 @@
 
 Activity finder is for those who don't want to figure out how to entertain themselves. 
 At the touch of a button, six different suggestions for what to do will be layed out before you!
+This project utilizes the Bored API to generate activity suggestions.
 
 ## Installation 
 ---
@@ -56,6 +57,12 @@ the less likely the suggestions won't repeat themselves.
 You are welcome to fork this repository and make changes, but I will not be accepting these changes.
 This project is designed for me to sharpen my web development skills overtime.
 
+## Licensing
+---
+
+The Bored API is governed by its own terms of use and licensing conditions. Please refer to the [Github Bored-API README](https://github.com/drewthoennes/Bored-API) for detailed information on how you can use the API.
+
+
 ## Outside Sources
 ---
 
@@ -68,5 +75,3 @@ There are two image sources I used to fill in the favicon and web app tile image
 ![Image](https://images.freeimages.com/fic/images/icons/2711/free_icons_for_windows8_metro/128/brain.png?ref=findicons)
 
 *Image source: [FreeImages](https://www.freeimages.com/)*
-
-
