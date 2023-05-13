@@ -127,3 +127,8 @@
   transition: all 0.3s ease-out;
   transform: scale(0.95);
 }
+
+.card-expand {
+  transition: all 0.3s ease-in;
+  transform: scale(1.05);
+}

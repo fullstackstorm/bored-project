@@ -142,6 +142,12 @@ async function fillCards(request) {
     setTimeout(() => {
       card.classList.remove("card-shrink");
     }, 500);
+
+    card.addEventListener("mouseenter", () => {
+      card.classList.add("card-expand");
+    })
+
+    
   };
 
   for (let i = 0; i < cardNodes.length; i++) {
