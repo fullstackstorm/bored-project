@@ -147,7 +147,9 @@ async function fillCards(request) {
       card.classList.add("card-expand");
     })
 
-    
+    card.addEventListener("mouseleave", () => {
+      card.classList.remove("card-expand");
+    })
   };
 
   for (let i = 0; i < cardNodes.length; i++) {
